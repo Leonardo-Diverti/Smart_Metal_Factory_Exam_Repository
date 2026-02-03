@@ -18,9 +18,9 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 
-Per il corretto funzionamento, il **Factory Server** deve essere sempre attivo prima di avviare qualsiasi client.
+Per avviare il progetto:
 
-### Step 1: Avviare il Factory Server
+### Step 1: Avviare il Factory Server (da tenere sempre attivo)
 Il server simula la fisica dei dispositivi (sensori e attuatori) aggiornando il loro stato a 10Hz.
 
 1.  Apri un terminale.
@@ -34,7 +34,6 @@ Il server simula la fisica dei dispositivi (sensori e attuatori) aggiornando il 
     >>> Physics Simulation Engine Started (10Hz) <<<
     >>> SMART METAL FACTORY Server Started (Port 5683) <<<
     ```
-    > **Nota:** Mantieni questo terminale aperto.
 
 ### Step 2: Avviare lo Smart Waste Manager (Autonomous Client)
 Questo client esegue la discovery automatica delle risorse e applica le logiche di controllo (es. accende il compattatore se il bidone è pieno).
@@ -51,7 +50,7 @@ Questo client esegue la discovery automatica delle risorse e applica le logiche 
     Discovering devices at coap://127.0.0.1:5683...
     [MAPPED] isola-1 > Waste Bin 1 -> coap://127.0.0.1:5683/tornitura/isola-1/waste/bin-1
     ...
-    --- CYCLIC MONITORING (Every 1s) ---
+    --- CYCLIC MONITORING (Ogni 1s) ---
        [isola-1] Waste Bin 1: 15.5 % | Rate: +3.50 %/min
     ```
 
@@ -60,8 +59,6 @@ Questo client esegue la discovery automatica delle risorse e applica le logiche 
 ## 3. Manual Operations (Test Scripts)
 
 Nella cartella `src/client/` sono presenti script per testare singole operazioni CoAP manualmente. Questi sono utili per il debug o per interagire direttamente con i dispositivi.
-
-**Assicurati di essere nella cartella `src/client/` prima di eseguire i comandi.**
 
 ### ➤ GET Request (Lettura Stato)
 Legge il valore istantaneo di un sensore o lo stato di un attuatore.

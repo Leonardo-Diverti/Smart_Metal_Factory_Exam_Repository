@@ -86,7 +86,6 @@ Utilizzato per inviare comandi (PUT) o leggere lo stato (GET) degli attuatori (C
 |-----------|----------|-----------------|
 | `status` | String | Stato operativo: "ON" o "OFF" |
 | `last_activation` | Long | Timestamp dell'ultima attivazione |
-| `cycle_count` | Integer | (Opzionale) Numero di cicli eseguiti |
 
 ---
 

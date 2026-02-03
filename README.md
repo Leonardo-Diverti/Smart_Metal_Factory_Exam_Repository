@@ -103,11 +103,11 @@ Le risorse sono organizzate gerarchicamente per riflettere la topologia della fa
 | Resource URI Path | Interface (`if`) | Resource Type (`rt`) | Methods | Description |
 |-------------------|------------------|----------------------|---------|-------------|
 | `tornitura/isola-X/waste/bin-Y` | `core.s` | `it.unimore.device.sensor.bin_level` | GET (Obs), POST | GET: Livello attuale. POST: Reset (Svuotamento). |
-| `tornitura/isola-X/waste/compactor-Y` | `core.a` | `it.unimore.device.actuator.compactor` | GET, PUT | PUT: Attiva/Disattiva (ON/OFF). |
-| `tornitura/isola-X/coolant/turbidity-Y` | `core.s` | `it.unimore.device.sensor.coolant_turbidity` | GET (Obs), POST | GET: Torbidità. POST: Sostituzione liquido. |
-| `tornitura/isola-X/coolant/pump-Y` | `core.a` | `it.unimore.device.actuator.filter_pump` | GET, PUT | PUT: Attiva/Disattiva pompa. |
+| `tornitura/isola-X/waste/compactor-Y` | `core.a` | `it.unimore.device.actuator.compactor` | GET (Obs), PUT | GET: Stato attuale (ON/OFF). PUT: Attiva/Disattiva (ON/OFF). |
+| `tornitura/isola-X/coolant/turbidity-Y` | `core.s` | `it.unimore.device.sensor.coolant_turbidity` | GET (Obs), POST | GET: Stato attuale (ON/OFF) GET: Torbidità. POST: Sostituzione liquido. |
+| `tornitura/isola-X/coolant/pump-Y` | `core.a` | `it.unimore.device.actuator.filter_pump` | GET (Obs), PUT | GET: Stato attuale (ON/OFF). PUT: Attiva/Disattiva pompa. |
 | `tornitura/isola-X/conveyor/weight-Y` | `core.s` | `it.unimore.device.sensor.conveyor_weight` | GET (Obs) | GET: Peso rilevato. |
-| `tornitura/isola-X/conveyor/motor-Y` | `core.a` | `it.unimore.device.actuator.conveyor_motor` | GET, PUT | PUT: Avvia/Ferma motore. |
+| `tornitura/isola-X/conveyor/motor-Y` | `core.a` | `it.unimore.device.actuator.conveyor_motor` | GET (Obs), PUT | GET: Stato attuale (ON/OFF). PUT: Avvia/Ferma motore. |
 
 ### Interaction Patterns
 

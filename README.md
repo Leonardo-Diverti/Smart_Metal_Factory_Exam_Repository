@@ -8,7 +8,6 @@
   - [Protocols & Communication](#protocols--communication)
     - [CoAP Resources & Mapping](#coap-resources--mapping)
     - [Interaction Patterns](#interaction-patterns)
-    - [Interaction Patterns](#interaction-patterns)
 
 ---
 

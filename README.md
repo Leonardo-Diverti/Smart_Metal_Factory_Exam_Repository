@@ -8,6 +8,7 @@
   - [Protocols & Communication](#protocols--communication)
     - [CoAP Resources & Mapping](#coap-resources--mapping)
     - [Interaction Patterns](#interaction-patterns)
+    - [Interaction Patterns](#interaction-patterns)
 
 ---
 
@@ -108,6 +109,14 @@ Le risorse sono organizzate gerarchicamente per riflettere la topologia della fa
 | `tornitura/isola-X/coolant/pump-Y` | `core.a` | `it.unimore.device.actuator.filter_pump` | GET, PUT | PUT: Attiva/Disattiva pompa. |
 | `tornitura/isola-X/conveyor/weight-Y` | `core.s` | `it.unimore.device.sensor.conveyor_weight` | GET (Obs) | GET: Peso rilevato. |
 | `tornitura/isola-X/conveyor/motor-Y` | `core.a` | `it.unimore.device.actuator.conveyor_motor` | GET, PUT | PUT: Avvia/Ferma motore. |
+
+### Interaction Patterns
+
+1.  **Discovery**: Il Client interroga `/.well-known/core` per scoprire dinamicamente le risorse disponibili e le loro capacità (`rt`, `if`).
+2.  **Telemetry (Observe)**: Il Client stabilisce una relazione di *Observe* sulle risorse sensore (`bin`, `turbidity`, `weight`). Il Server notifica il Client in modo asincrono ad ogni cambiamento di stato fisico simulato.
+3.  **Actuation (Control Loop)**:
+    - **Threshold Activation**: Se il valore supera una soglia (es. Bin > 80%), il Manager invia una `PUT {"status": "ON"}` all'attuatore associato.
+    - **Critical Reset**: Se il valore è critico (es. Bin > 95%), il Manager invia una `POST` direttamente al sensore per simulare un intervento manuale (es. svuotamento bidone).
 
 
 
